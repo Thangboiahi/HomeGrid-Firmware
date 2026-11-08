@@ -1,3 +1,7 @@
+## FW-03A board and module identification — 2026-11-08
+- Added an evidence-based board/module identity report separating verified ESP32-D0WD-V3 rev 3.0, 4 MB detected flash, ESP-IDF v6.1 / esp32 target and CH9102 USB bridge facts from unresolved carrier-board revision, module suffix, PSRAM and power details.
+- Recorded the Hardware Department inspection request, evidence checklist, ownership and FW-03A exit gate. No GPIO, peripheral, actuator or physical testing was performed.
+
 # Change log
 
 ## FW-02F verification and final handover — 2026-11-08
