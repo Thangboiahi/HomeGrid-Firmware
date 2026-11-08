@@ -1,5 +1,11 @@
 # Change log
 
+## FW-02A requirements traceability and HQ authorization — 2026-11-08
+- Recorded HQ authorization `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001` and converted the former FW-02 proposal into the approved six-package execution plan with mandatory host/mock-only restrictions.
+- Added `docs/FW-02A-requirements-traceability.md` with 24 stable requirement IDs, authority/evidence register, interface ownership, non-assumptions, safety constraints, open dependencies and FW-02B entry recommendation.
+- Updated `docs/FW-02-work-package.md` to reflect the HQ decision and explicit exclusions. No GPIO, actuator, radio/network, provisioning, OTA, credential or shared-contract implementation was introduced.
+- Changes are on branch `fw-02a-requirements-traceability`; FW-02A remains pending repository reread, acceptance verification and merge/department integration review.
+
 ## FW-01F final acceptance and FW-02 proposal — 2026-11-08
 - Audited FW-01A–FW-01E reports and evidence, reconciled the board records to measured ESP32-D0WD-V3 v3.0 / 4 MB flash / CH9102 COM8 (VID_1A86:PID_55D4), and retained the 2 MB image-header warning and unknown board/module markings.
 - Formally closed FW-01 following Firmware Department acceptance of FW-01E. Created `docs/FW-01-final-acceptance-report.md` with evidence index and non-blocking hardware follow-ups.
@@ -22,7 +28,7 @@
 ## FW-01A installation retry — 2026-11-08
 - Installed the checksum-verified official EIM CLI v0.20.1 in the current user's LocalAppData folder.
 - EIM checked out ESP-IDF v6.1 from Espressif tag `v6.1` at commit `fff9895c82d744c7237be8847347bdd1b07c6643` and completed submodule retrieval.
-- Stopped before tool installation completed because EIM unexpectedly selected `C:\Espressif\dist` for downloads despite the requested user-level base path; recorded partial state and exact paths in the installation report.
+- Stopped before tool installation completed because EIM unexpectedly selected `C:\\Espressif\\dist` for downloads despite the requested user-level base path; recorded partial state and exact paths in the installation report.
 - CMake, Ninja, compiler and environment verification remain pending. No target-selection, build, or flash command was run.
 
 ## FW-01C preparation — 2026-11-08
