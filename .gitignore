@@ -1,0 +1,13 @@
+# ESP-IDF build outputs
+build/
+sdkconfig
+sdkconfig.old
+managed_components/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local audit evidence may contain host-specific details; review before sharing.
