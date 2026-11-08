@@ -3,7 +3,7 @@
 **Milestone:** FW-02 — Smart Switch Firmware Foundation  
 **Work package:** FW-02F — Verification and Final Handover  
 **Authority:** `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001`  
-**Status:** Final host verification and source audit passed; integration PR chain remains open  
+**Status:** FW-02A–FW-02F accepted; cumulative integration merged into `main`; final repository verification recorded  
 **Branch:** `fw-02f-verification-handover`  
 **Predecessor:** FW-02E host verification passed.
 
@@ -85,7 +85,7 @@ These are not FW-02 host-test blockers. They are mandatory gates before the corr
 
 ## 6. Repository integration status
 
-The department work was developed as sequential pull requests. PRs are intentionally dependent and have not been merged by this handover:
+The sequential package pull requests were merged into their dependent feature branches as designed:
 - PR #1 — FW-02A requirements traceability.
 - PR #2 — FW-02B architecture, based on FW-02A.
 - PR #3 — FW-02C state/command domain, based on FW-02B.
@@ -93,14 +93,16 @@ The department work was developed as sequential pull requests. PRs are intention
 - PR #5 — FW-02E diagnostics, based on FW-02D.
 - PR #6 — FW-02F verification/handover, based on FW-02E.
 
-Integration order remains PR #1 → #2 → #3 → #4 → #5 → #6. Repository integration review/merge remains a separate governance step. Do not merge out of order.
+The cumulative chain was then integrated into `main` by PR #7, which is closed and merged. The verified merge commit is `d7a1c8ef5013ff783fce420df2955be3f8e5e153`. A recursive tree audit of `main` confirmed all 23 expected FW-02A–FW-02F deliverable paths were present, with no missing paths.
+
+GitHub Actions run 38 passed on the final PR #6 head revision (`a007fdb161590365259291ced2ad902c5ad1f2ec`), including the FW-02C, FW-02D and FW-02E C tests and the Python suite. The PR #7 merge commit itself had no recorded check runs/statuses at the time of verification; therefore run 38 is evidence for the final pre-integration PR head, not a CI result on the merge commit.
 
 ## 7. Final acceptance recommendation
 
-The FW-02A–FW-02F implementation, host verification and safety-audit deliverables are complete within the HQ-approved mock-only scope. GitHub Actions run 36 passed for the final report revision; all C and Python stages passed and the safety-audit test output was reviewed. Firmware Department final acceptance is recorded for the mock-only FW-02 scope.
+The FW-02A–FW-02F implementation, host verification and safety-audit deliverables are complete within the HQ-approved mock-only scope. GitHub Actions run 38 passed for the final PR #6 head revision; all C and Python stages passed. The PR #7 merge commit has no recorded check runs/statuses. Firmware Department final acceptance is recorded for the mock-only FW-02 scope.
 
 **No production readiness, ESP-IDF build completion, physical actuation readiness or hardware safety approval is claimed.** FW-02 establishes a host-verified firmware foundation only.
 
 ---
 **Prepared by:** HomeGrid Firmware Department  
-**Document control:** FW-02 final verification and HQ handover; repository PR integration remains pending.
+**Document control:** FW-02 final verification and HQ handover; repository integration into `main` is complete via PR #7; see Section 6 for the verification qualification.
