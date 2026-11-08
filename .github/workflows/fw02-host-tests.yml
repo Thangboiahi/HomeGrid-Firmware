@@ -1,0 +1,30 @@
+name: FW-02 host verification
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "fw-02c-*"
+
+permissions:
+  contents: read
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile and run FW-02C domain tests
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -pedantic \
+            -I components/homegrid_domain/include \
+            components/homegrid_domain/switch_state.c \
+            tests/host/test_switch_state.c \
+            -o test_switch_state
+          ./test_switch_state
+
+      - name: Run existing Python scaffold tests
+        run: |
+          python3 -m unittest discover -s tests -v
