@@ -1,3 +1,8 @@
+## FW-04B — Board support abstraction design — 2026-11-08
+- Added `docs/FW-04B-board-support-abstraction-design.md` defining logical board-support ownership, evidence-backed profile model, initialization/capability reporting, failure behavior, configuration ownership and host-test requirements.
+- Kept physical pin mappings unknown until Hardware verifies them; capability discovery does not grant output permission.
+- Design only: no ESP-IDF GPIO/peripheral implementation, no board-specific pin assignments, no shared contract changes, no output activation. ESP-IDF v6.1, `esp32` target and 2 MB image configuration preserved; deny-only output permission unchanged.
+
 ## FW-04A — Board capability profile and evidence reconciliation — 2026-11-08
 - Added `docs/FW-04A-board-capability-profile.md`, reconciling accepted FW-01 device/build evidence and owner-supplied board photographs into a structured, evidence-qualified board profile.
 - Recorded visible `ESP32 DEVKIT V1` / `ESP-WROOM-32` markings, verified ESP32-D0WD-V3 revision 3.0, 4 MB detected flash, CH9102 bridge and preserved 2 MB image configuration.
