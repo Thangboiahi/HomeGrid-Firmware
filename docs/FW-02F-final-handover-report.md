@@ -97,7 +97,7 @@ Integration order remains PR #1 → #2 → #3 → #4 → #5 → #6. Repository i
 
 ## 7. Final acceptance recommendation
 
-The FW-02A–FW-02E implementation and host verification deliverables are complete within the HQ-approved mock-only scope. FW-02F adds a regression audit and records evidence and unresolved dependencies. Final FW-02F acceptance is conditional on its own CI run passing and the new safety-audit tests being reviewed.
+The FW-02A–FW-02F implementation, host verification and safety-audit deliverables are complete within the HQ-approved mock-only scope. GitHub Actions run 36 passed for the final report revision; all C and Python stages passed and the safety-audit test output was reviewed. Firmware Department final acceptance is recorded for the mock-only FW-02 scope.
 
 **No production readiness, ESP-IDF build completion, physical actuation readiness or hardware safety approval is claimed.** FW-02 establishes a host-verified firmware foundation only.
 
