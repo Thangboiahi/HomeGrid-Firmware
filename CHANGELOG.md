@@ -1,3 +1,8 @@
+## FW-03F — Integration planning and verification handover — 2026-11-08
+- Consolidated FW-03A–FW-03E identity evidence, interface requirements, GPIO suitability proposal, relay/fan requirements, feedback/fault/safe-state requirements, open dependencies, gated integration plan and FW-04 recommendation.
+- Explicitly records that board electrical qualification, final pin map, driver validation, Software contracts, hazard approval and physical actuation remain incomplete/not authorized.
+- No runtime code or shared contract changes; no GPIO, relay/fan, mains or physical testing. FW-02 output permission remains deny-only.
+
 ## FW-03E — Feedback, fault detection and safe-state requirements — 2026-11-08
 - Added independent desired/applied/observed/availability/fault/output-permission semantics, generic feedback requirements, proposed fault taxonomy, firmware/hardware safe-state responsibilities, transition requirements, diagnostics and future verification requirements.
 - Physical feedback sources, electrical characteristics, timing thresholds, fault severity/clear authority and system hazard decisions remain pending Hardware/HQ review.
