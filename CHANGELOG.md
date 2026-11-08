@@ -1,3 +1,8 @@
+## FW-04F — Verification and handover — 2026-11-08
+- Added `docs/FW-04F-verification-handover.md` consolidating FW-04A–FW-04E deliverables, branch/PR register, host CI evidence, open Hardware/Software/HQ dependencies, acceptance assessment and FW-05 recommendation.
+- Records FW-04D corrected host CI run 59 success and earlier workflow formatting failure; clearly distinguishes host testing from ESP-IDF/hardware testing.
+- No physical GPIO/actuator implementation, no mains testing, no shared contract changes. FW-02 deny-only output permission unchanged.
+
 ## FW-04E — Software integration requirements — 2026-11-08
 - Added `docs/FW-04E-software-integration-requirements.md` documenting firmware-facing identity, command/acknowledgement, desired/reported state, configuration, diagnostics and telemetry requirements with a proposed departmental ownership matrix.
 - Inspected `Thangboiahi/HomeGrid-Software`; GitHub reported its main repository tree is empty, so no Software-owned contracts or review comments could be verified. Requirements remain proposals pending Software/HQ review.
