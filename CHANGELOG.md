@@ -1,3 +1,9 @@
+## FW-04A — Board capability profile and evidence reconciliation — 2026-11-08
+- Added `docs/FW-04A-board-capability-profile.md`, reconciling accepted FW-01 device/build evidence and owner-supplied board photographs into a structured, evidence-qualified board profile.
+- Recorded visible `ESP32 DEVKIT V1` / `ESP-WROOM-32` markings, verified ESP32-D0WD-V3 revision 3.0, 4 MB detected flash, CH9102 bridge and preserved 2 MB image configuration.
+- Explicitly retained carrier revision, exact module suffix, PSRAM, schematic/net mapping, regulator, rail budget, IO protection and reset electrical behavior as unknown pending Hardware evidence. No Hardware Department evidence package was available in accessible HomeGrid repositories during this work package.
+- Documentation only; no source/runtime/build configuration/shared contract changes, no GPIO assignment, no physical tests or actuation. FW-02 deny-only output permission unchanged.
+
 # Change log
 
 ## FW-02F verification and final handover — 2026-11-08
