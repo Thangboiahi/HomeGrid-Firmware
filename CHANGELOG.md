@@ -1,3 +1,8 @@
+## FW-03E — Feedback, fault detection and safe-state requirements — 2026-11-08
+- Added independent desired/applied/observed/availability/fault/output-permission semantics, generic feedback requirements, proposed fault taxonomy, firmware/hardware safe-state responsibilities, transition requirements, diagnostics and future verification requirements.
+- Physical feedback sources, electrical characteristics, timing thresholds, fault severity/clear authority and system hazard decisions remain pending Hardware/HQ review.
+- No runtime code or shared contract changed; no GPIO, relay/fan, mains or physical testing. Output permission remains deny-only.
+
 ## FW-03D — Relay and fan-driver interface requirements — 2026-11-08
 - Added logical actuator boundary, Hardware evidence checklist for relay/fan drivers, electrical/load/protection requirements, feedback semantics, reset/unpowered/disconnected failure cases, safe-default requirements and dependencies.
 - All relay polarity, voltage/current, topology, isolation, fan type/control method and feedback characteristics remain explicitly unknown pending exact hardware evidence.
