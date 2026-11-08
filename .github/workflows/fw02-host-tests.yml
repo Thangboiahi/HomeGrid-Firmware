@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - "fw-02c-*"
+      - "fw-02*"
 
 permissions:
   contents: read
@@ -24,6 +24,19 @@ jobs:
             tests/host/test_switch_state.c \
             -o test_switch_state
           ./test_switch_state
+
+      - name: Compile and run FW-02D application and mock tests
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -pedantic \
+            -I components/homegrid_domain/include \
+            -I components/homegrid_mock/include \
+            -I components/homegrid_application/include \
+            components/homegrid_domain/switch_state.c \
+            components/homegrid_mock/mock_actuator.c \
+            components/homegrid_application/application.c \
+            tests/host/test_fw02d_application.c \
+            -o test_fw02d_application
+          ./test_fw02d_application
 
       - name: Run existing Python scaffold tests
         run: |
