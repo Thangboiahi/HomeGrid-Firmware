@@ -1,3 +1,8 @@
+## FW-03C — GPIO and peripheral allocation proposal — 2026-11-08
+- Added a preliminary ESP32 GPIO suitability register, peripheral planning matrix, pin/resource conflict register, Hardware Department evidence checklist and explicit non-allocation statement.
+- Classified flash pins as reserved, strapping pins and UART0 as avoid/reserved, GPIO34–39 as input-only, and other pins as conditional candidates pending exact carrier schematic/net verification.
+- No GPIO configuration, output writes, peripheral initialization, electrical probing, actuator connection or physical testing performed. FW-02 output permission remains deny-only.
+
 ## FW-03A / FW-03B planning updates — 2026-11-08
 - Incorporated user-supplied board photographs: PCB silkscreen `ESP32 DEVKIT V1`, module shield `ESP-WROOM-32`, visible FCC ID `2AC7Z-ESP32WROOM32`, Micro-USB connector and EN/BOOT buttons. Manufacturer, PCB revision, module suffix, PSRAM and power characteristics remain unverified.
 - Added FW-03B hardware/software interface requirements, department ownership, semantic boundaries, error requirements and open contract dependencies. Software repository review found the accessible repository empty; no existing Software contract could be verified or modified.
