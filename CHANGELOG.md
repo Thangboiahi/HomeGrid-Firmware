@@ -1,3 +1,8 @@
+## FW-04E — Software integration requirements — 2026-11-08
+- Added `docs/FW-04E-software-integration-requirements.md` documenting firmware-facing identity, command/acknowledgement, desired/reported state, configuration, diagnostics and telemetry requirements with a proposed departmental ownership matrix.
+- Inspected `Thangboiahi/HomeGrid-Software`; GitHub reported its main repository tree is empty, so no Software-owned contracts or review comments could be verified. Requirements remain proposals pending Software/HQ review.
+- No shared contract, protocol, endpoint, network, provisioning, OTA or production integration was created. No physical actuation; deny-only output permission unchanged.
+
 ## FW-04D — Mock adapters and host tests — 2026-11-08
 - Added a deterministic host-only mock IO adapter for logical switch/relay/fan requests with safe unavailable/unconfigured defaults and typed result injection.
 - Added feedback injection with VALID/MISSING/STALE/INVALID/CONTRADICTORY/UNAVAILABLE statuses; only valid fresh known feedback maps to an observed logical value, otherwise UNKNOWN.
