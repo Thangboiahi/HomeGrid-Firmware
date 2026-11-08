@@ -4,7 +4,7 @@
 - Recorded HQ authorization `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001` and converted the former FW-02 proposal into the approved six-package execution plan with mandatory host/mock-only restrictions.
 - Added `docs/FW-02A-requirements-traceability.md` with 24 stable requirement IDs, authority/evidence register, interface ownership, non-assumptions, safety constraints, open dependencies and FW-02B entry recommendation.
 - Updated `docs/FW-02-work-package.md` to reflect the HQ decision and explicit exclusions. No GPIO, actuator, radio/network, provisioning, OTA, credential or shared-contract implementation was introduced.
-- Changes are on branch `fw-02a-requirements-traceability`; FW-02A remains pending repository reread, acceptance verification and merge/department integration review.
+- Changes are on branch `fw-02a-requirements-traceability`; FW-02A requirements and related documentation were reread from GitHub and accepted by the Firmware Department; PR #1 remains open for integration review/merge.
 
 ## FW-01F final acceptance and FW-02 proposal — 2026-11-08
 - Audited FW-01A–FW-01E reports and evidence, reconciled the board records to measured ESP32-D0WD-V3 v3.0 / 4 MB flash / CH9102 COM8 (VID_1A86:PID_55D4), and retained the 2 MB image-header warning and unknown board/module markings.
