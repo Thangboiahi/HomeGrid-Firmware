@@ -1,5 +1,10 @@
 # Change log
 
+## FW-02F verification and final handover — 2026-11-08
+- Added automated source-level safety regression tests for FW-02 domain, mock, application and diagnostics components.
+- Added the FW-02 final handover report with host CI evidence, exclusion audit, integration status and HQ-owned dependency register.
+- Recorded that FW-02 remains host/mock verified only; no ESP-IDF build, physical actuation or production readiness is claimed.
+
 ## FW-02E diagnostics and fault handling — 2026-11-08
 - Added a bounded, fixed-capacity in-memory diagnostics event ring with chronological reads, saturating counters, overwrite accounting and sticky last-fault summary.
 - Instrumented application startup, policy rejection, state errors and mock actuator outcomes with correlation IDs and state revisions.
