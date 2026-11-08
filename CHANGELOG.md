@@ -1,3 +1,35 @@
+## FW-04F — Verification and handover — 2026-11-08
+- Added `docs/FW-04F-verification-handover.md` consolidating FW-04A–FW-04E deliverables, branch/PR register, host CI evidence, open Hardware/Software/HQ dependencies, acceptance assessment and FW-05 recommendation.
+- Records FW-04D corrected host CI run 59 success and earlier workflow formatting failure; clearly distinguishes host testing from ESP-IDF/hardware testing.
+- No physical GPIO/actuator implementation, no mains testing, no shared contract changes. FW-02 deny-only output permission unchanged.
+
+## FW-04E — Software integration requirements — 2026-11-08
+- Added `docs/FW-04E-software-integration-requirements.md` documenting firmware-facing identity, command/acknowledgement, desired/reported state, configuration, diagnostics and telemetry requirements with a proposed departmental ownership matrix.
+- Inspected `Thangboiahi/HomeGrid-Software`; GitHub reported its main repository tree is empty, so no Software-owned contracts or review comments could be verified. Requirements remain proposals pending Software/HQ review.
+- No shared contract, protocol, endpoint, network, provisioning, OTA or production integration was created. No physical actuation; deny-only output permission unchanged.
+
+## FW-04D — Mock adapters and host tests — 2026-11-08
+- Added a deterministic host-only mock IO adapter for logical switch/relay/fan requests with safe unavailable/unconfigured defaults and typed result injection.
+- Added feedback injection with VALID/MISSING/STALE/INVALID/CONTRADICTORY/UNAVAILABLE statuses; only valid fresh known feedback maps to an observed logical value, otherwise UNKNOWN.
+- Added four FW-04D C test groups and extended the GitHub Actions host workflow and README. No GPIO, ESP-IDF peripheral, physical output, relay/fan/pump operation or shared contract changes.
+- Existing FW-02 deny-only output-permission state remains unchanged; ESP-IDF v6.1, `esp32` target and 2 MB image configuration preserved.
+
+## FW-04C — Hardware-independent driver interfaces — 2026-11-08
+- Added `docs/FW-04C-hardware-independent-driver-interfaces.md` specifying logical switch/relay/fan/feedback boundaries, typed adapter outcomes, independent state dimensions, feedback validity and mock compatibility.
+- Kept all physical electrical characteristics and GPIO details outside application interfaces; no real GPIO/peripheral driver or shared contract was added.
+- Design only; no output activation or physical test. Deny-only output permission unchanged; ESP-IDF v6.1, `esp32` target and 2 MB image configuration preserved.
+
+## FW-04B — Board support abstraction design — 2026-11-08
+- Added `docs/FW-04B-board-support-abstraction-design.md` defining logical board-support ownership, evidence-backed profile model, initialization/capability reporting, failure behavior, configuration ownership and host-test requirements.
+- Kept physical pin mappings unknown until Hardware verifies them; capability discovery does not grant output permission.
+- Design only: no ESP-IDF GPIO/peripheral implementation, no board-specific pin assignments, no shared contract changes, no output activation. ESP-IDF v6.1, `esp32` target and 2 MB image configuration preserved; deny-only output permission unchanged.
+
+## FW-04A — Board capability profile and evidence reconciliation — 2026-11-08
+- Added `docs/FW-04A-board-capability-profile.md`, reconciling accepted FW-01 device/build evidence and owner-supplied board photographs into a structured, evidence-qualified board profile.
+- Recorded visible `ESP32 DEVKIT V1` / `ESP-WROOM-32` markings, verified ESP32-D0WD-V3 revision 3.0, 4 MB detected flash, CH9102 bridge and preserved 2 MB image configuration.
+- Explicitly retained carrier revision, exact module suffix, PSRAM, schematic/net mapping, regulator, rail budget, IO protection and reset electrical behavior as unknown pending Hardware evidence. No Hardware Department evidence package was available in accessible HomeGrid repositories during this work package.
+- Documentation only; no source/runtime/build configuration/shared contract changes, no GPIO assignment, no physical tests or actuation. FW-02 deny-only output permission unchanged.
+
 # Change log
 
 ## FW-02F verification and final handover — 2026-11-08
