@@ -66,7 +66,7 @@ The CI workflow compiles with C11 and `-Wall -Wextra -Werror -pedantic`, runs bo
 - [x] Job `host-tests` completed successfully; FW-02C C tests, FW-02D application/mock C tests, and six Python scaffold tests all passed.
 - [x] Firmware Department verification gate accepted; proceed to FW-02E.
 
-No local compiler run or branch CI pass is claimed in this report. The FW-02D gate remains open until GitHub Actions completes successfully.
+GitHub Actions run 12 completed successfully and its job logs were reviewed. This verifies the host suites only; no ESP-IDF build or physical hardware test is implied.
 
 ---
 **Prepared by:** HomeGrid Firmware Department  
