@@ -1,3 +1,12 @@
+## FW-03A / FW-03B planning updates — 2026-11-08
+- Incorporated user-supplied board photographs: PCB silkscreen `ESP32 DEVKIT V1`, module shield `ESP-WROOM-32`, visible FCC ID `2AC7Z-ESP32WROOM32`, Micro-USB connector and EN/BOOT buttons. Manufacturer, PCB revision, module suffix, PSRAM and power characteristics remain unverified.
+- Added FW-03B hardware/software interface requirements, department ownership, semantic boundaries, error requirements and open contract dependencies. Software repository review found the accessible repository empty; no existing Software contract could be verified or modified.
+- No GPIO, physical actuator, network, persistence, relay/fan, or mains implementation/testing was performed. FW-02 output permission remains deny-only.
+
+## FW-03A board and module identification — 2026-11-08
+- Added an evidence-based board/module identity report separating verified ESP32-D0WD-V3 rev 3.0, 4 MB detected flash, ESP-IDF v6.1 / esp32 target and CH9102 USB bridge facts from unresolved carrier-board revision, module suffix, PSRAM and power details.
+- Recorded the Hardware Department inspection request, evidence checklist, ownership and FW-03A exit gate. No GPIO, peripheral, actuator or physical testing was performed.
+
 # Change log
 
 ## FW-02F verification and final handover — 2026-11-08
