@@ -56,9 +56,9 @@ jobs:
 
       - name: Compile and run FW-04D mock IO and feedback tests
         run: |
-          cc -std=c11 -Wall -Wextra -Werror -pedantic \\
-            -I components/homegrid_mock/include \\
-            components/homegrid_mock/mock_io.c \\
-            tests/host/test_fw04d_mock_io.c \\
+          cc -std=c11 -Wall -Wextra -Werror -pedantic \
+            -I components/homegrid_mock/include \
+            components/homegrid_mock/mock_io.c \
+            tests/host/test_fw04d_mock_io.c \
             -o test_fw04d_mock_io
           ./test_fw04d_mock_io
