@@ -1,10 +1,17 @@
 # Change log
 
+## FW-02D mock actuator and application orchestration — 2026-11-08
+- Added a deterministic host-only mock actuator that records requested values/counts and returns controlled outcomes; its safe default is unavailable.
+- Added synchronous application orchestration that applies the explicit command-policy gate before calling the mock and records typed outcomes in the domain state.
+- Added eight host tests for policy blocking, mock request recording, accepted/rejected/unavailable outcomes, invalid commands and repeated requests.
+- Extended GitHub Actions to compile and run both C suites and the existing Python scaffold tests on FW-02 branches and pull requests.
+- No GPIO, physical actuator, relay/fan, network, persistence, provisioning, OTA, credentials or shared-contract implementation was added.
+
 ## FW-02C state model and command processing — 2026-11-08
 - Added a platform-independent pure-C switch-domain API and implementation with distinct desired/applied/observed/availability/fault/output-permission dimensions.
 - Implemented safe UNKNOWN startup, permanent output DENIED, explicit command policy gating (unresolved/denied commands do not mutate state), typed mock-result state recording and enum/state validation.
 - Added eight native C test cases, host build instructions and a GitHub Actions workflow to compile/run the C suite and existing Python scaffold tests.
-- Added `docs/FW-02C-implementation-report.md`. Implementation is committed; CI execution and evidence review remain pending. No physical GPIO, actuator, network, persistence, provisioning, OTA or shared-contract code was added.
+- Added `docs/FW-02C-implementation-report.md`. GitHub Actions pass was confirmed by the user; detailed run logs were not independently retrieved in this session. No physical GPIO, actuator, network, persistence, provisioning, OTA or shared-contract code was added.
 
 ## FW-02B firmware architecture — 2026-11-08
 - Added `docs/FW-02B-firmware-architecture.md` defining the layered ports-and-adapters architecture, component responsibilities, dependency direction, source layout, state ownership/invariants, command boundary, mock-only actuator contract, identity/configuration/diagnostics ports, error model, task/resource model, test strategy and future integration gates.
@@ -12,15 +19,14 @@
 - FW-02B architecture document was reread from GitHub and accepted by the Firmware Department. PR integration review remains pending; no source implementation was introduced.
 
 ## FW-02A requirements traceability and HQ authorization — 2026-11-08
-- Recorded HQ authorization `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001` and converted the former FW-02 proposal into the approved six-package execution plan with mandatory host/mock-only restrictions.
-- Added `docs/FW-02A-requirements-traceability.md` with 24 stable requirement IDs, authority/evidence register, interface ownership, non-assumptions, safety constraints, open dependencies and FW-02B entry recommendation.
+- Recorded HQ authorization `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001` and converted the former FW-02 proposal into the approved six-package execution plan with 24 stable requirement IDs, authority/evidence register, interface ownership, non-assumptions, safety constraints, open dependencies and FW-02B entry recommendation.
 - Updated `docs/FW-02-work-package.md` to reflect the HQ decision and explicit exclusions. No GPIO, actuator, radio/network, provisioning, OTA, credential or shared-contract implementation was introduced.
 - Changes are on branch `fw-02a-requirements-traceability`; FW-02A requirements and related documentation were reread from GitHub and accepted by the Firmware Department; PR #1 remains open for integration review/merge.
 
 ## FW-01F final acceptance and FW-02 proposal — 2026-11-08
 - Audited FW-01A–FW-01E reports and evidence, reconciled the board records to measured ESP32-D0WD-V3 v3.0 / 4 MB flash / CH9102 COM8 (VID_1A86:PID_55D4), and retained the 2 MB image-header warning and unknown board/module markings.
 - Formally closed FW-01 following Firmware Department acceptance of FW-01E. Created `docs/FW-01-final-acceptance-report.md` with evidence index and non-blocking hardware follow-ups.
-- Prepared `docs/FW-02-work-package.md` for Department review only; no FW-02 implementation began and no relay/mains work is authorized.
+- Prepared `docs/FW-02-work-package.md` for HQ decision only; no FW-02 implementation began and no relay/mains work is authorized.
 
 ## FW-01E physical verification — 2026-11-08
 - Identified the development board on COM8 as ESP32-D0WD-V3 revision 3.0 behind a CH9102 bridge (VID_1A86:PID_55D4); confirmed 4 MB physical flash and separated COM3 and COM4–COM6 as Intel AMT/Dell LTE devices.
