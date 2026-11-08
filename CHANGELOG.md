@@ -1,3 +1,9 @@
+## FW-04D — Mock adapters and host tests — 2026-11-08
+- Added a deterministic host-only mock IO adapter for logical switch/relay/fan requests with safe unavailable/unconfigured defaults and typed result injection.
+- Added feedback injection with VALID/MISSING/STALE/INVALID/CONTRADICTORY/UNAVAILABLE statuses; only valid fresh known feedback maps to an observed logical value, otherwise UNKNOWN.
+- Added four FW-04D C test groups and extended the GitHub Actions host workflow and README. No GPIO, ESP-IDF peripheral, physical output, relay/fan/pump operation or shared contract changes.
+- Existing FW-02 deny-only output-permission state remains unchanged; ESP-IDF v6.1, `esp32` target and 2 MB image configuration preserved.
+
 ## FW-04C — Hardware-independent driver interfaces — 2026-11-08
 - Added `docs/FW-04C-hardware-independent-driver-interfaces.md` specifying logical switch/relay/fan/feedback boundaries, typed adapter outcomes, independent state dimensions, feedback validity and mock compatibility.
 - Kept all physical electrical characteristics and GPIO details outside application interfaces; no real GPIO/peripheral driver or shared contract was added.
