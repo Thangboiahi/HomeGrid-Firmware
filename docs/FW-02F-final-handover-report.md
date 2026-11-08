@@ -3,7 +3,7 @@
 **Milestone:** FW-02 — Smart Switch Firmware Foundation  
 **Work package:** FW-02F — Verification and Final Handover  
 **Authority:** `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001`  
-**Status:** Final host verification and source audit committed; integration PR chain remains open  
+**Status:** Final host verification and source audit passed; integration PR chain remains open  
 **Branch:** `fw-02f-verification-handover`  
 **Predecessor:** FW-02E host verification passed.
 
@@ -37,7 +37,8 @@
 ### FW-02F
 - Adds `tests/test_fw02_safety_audit.py` to continuously check the FW-02 domain, mock, application and diagnostics sources for prohibited GPIO, radio, MQTT, NVS and OTA includes/calls.
 - Confirms the output-permission enum contains only `HG_SWITCH_OUTPUT_DENIED` and that no GPIO/relay actuator component has been introduced.
-- FW-02F PR CI result is pending at report creation; do not claim this new audit has passed until its workflow run is retrieved.
+- GitHub Actions run 34 passed for PR #6 merge commit `f5374c1d221adee761fe6e8aa2bf1d9e634100b7`.
+- All four C/Python workflow stages passed; the Python suite ran 10 tests, including all four new FW-02 safety-audit checks. Job logs were retrieved and reviewed.
 - No ESP-IDF build was performed as part of this report; no local ESP-IDF environment result is inferred from host CI.
 
 ## 3. Safety and exclusion audit
