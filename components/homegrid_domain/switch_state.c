@@ -6,20 +6,51 @@ static int hg_state_is_valid(const hg_switch_state_t *state)
         return 0;
     }
 
-    if (state->desired < HG_SWITCH_VALUE_UNKNOWN ||
-        state->desired > HG_SWITCH_VALUE_ON ||
-        state->applied < HG_SWITCH_APPLIED_UNKNOWN ||
-        state->applied > HG_SWITCH_APPLIED_REJECTED ||
-        state->observed != HG_SWITCH_VALUE_UNKNOWN ||
-        state->availability < HG_SWITCH_AVAILABILITY_STARTING ||
-        state->availability > HG_SWITCH_AVAILABILITY_UNAVAILABLE ||
-        state->fault < HG_SWITCH_FAULT_NONE ||
-        state->fault > HG_SWITCH_FAULT_INTERNAL ||
-        state->output_permission != HG_SWITCH_OUTPUT_DENIED) {
+    switch (state->desired) {
+    case HG_SWITCH_VALUE_UNKNOWN:
+    case HG_SWITCH_VALUE_OFF:
+    case HG_SWITCH_VALUE_ON:
+        break;
+    default:
         return 0;
     }
 
-    return 1;
+    switch (state->applied) {
+    case HG_SWITCH_APPLIED_UNKNOWN:
+    case HG_SWITCH_APPLIED_NOT_APPLIED:
+    case HG_SWITCH_APPLIED_ACCEPTED:
+    case HG_SWITCH_APPLIED_REJECTED:
+        break;
+    default:
+        return 0;
+    }
+
+    /* FW-02 has no approved physical feedback source. */
+    if (state->observed != HG_SWITCH_VALUE_UNKNOWN) {
+        return 0;
+    }
+
+    switch (state->availability) {
+    case HG_SWITCH_AVAILABILITY_STARTING:
+    case HG_SWITCH_AVAILABILITY_AVAILABLE:
+    case HG_SWITCH_AVAILABILITY_DEGRADED:
+    case HG_SWITCH_AVAILABILITY_UNAVAILABLE:
+        break;
+    default:
+        return 0;
+    }
+
+    switch (state->fault) {
+    case HG_SWITCH_FAULT_NONE:
+    case HG_SWITCH_FAULT_MOCK_REJECTED:
+    case HG_SWITCH_FAULT_ACTUATOR_UNAVAILABLE:
+    case HG_SWITCH_FAULT_INTERNAL:
+        break;
+    default:
+        return 0;
+    }
+
+    return state->output_permission == HG_SWITCH_OUTPUT_DENIED;
 }
 
 hg_switch_status_t hg_switch_state_init(hg_switch_state_t *state)
@@ -54,8 +85,12 @@ hg_switch_status_t hg_switch_apply_command(
         return HG_SWITCH_STATUS_INVALID_STATE;
     }
 
-    if (command->source < HG_SWITCH_SOURCE_LOCAL ||
-        command->source > HG_SWITCH_SOURCE_INTERNAL) {
+    switch (command->source) {
+    case HG_SWITCH_SOURCE_LOCAL:
+    case HG_SWITCH_SOURCE_REMOTE:
+    case HG_SWITCH_SOURCE_INTERNAL:
+        break;
+    default:
         return HG_SWITCH_STATUS_INVALID_ARGUMENT;
     }
 
@@ -121,7 +156,7 @@ hg_switch_status_t hg_switch_record_mock_result(
         return HG_SWITCH_STATUS_INVALID_ARGUMENT;
     }
 
-    /* FW-02 has no physical feedback and can never authorize output. */
+    /* A mock result is not physical feedback and cannot authorize output. */
     state->observed = HG_SWITCH_VALUE_UNKNOWN;
     state->output_permission = HG_SWITCH_OUTPUT_DENIED;
     state->revision++;
