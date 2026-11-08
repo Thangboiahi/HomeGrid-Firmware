@@ -1,0 +1,55 @@
+name: FW-02 host verification
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "fw-02*"
+
+permissions:
+  contents: read
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile and run FW-02C domain tests
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -pedantic \
+            -I components/homegrid_domain/include \
+            components/homegrid_domain/switch_state.c \
+            tests/host/test_switch_state.c \
+            -o test_switch_state
+          ./test_switch_state
+
+      - name: Compile and run FW-02D application and mock tests
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -pedantic \
+            -I components/homegrid_domain/include \
+            -I components/homegrid_mock/include \
+            -I components/homegrid_application/include \
+            -I components/homegrid_diagnostics/include \
+            components/homegrid_domain/switch_state.c \
+            components/homegrid_mock/mock_actuator.c \
+            components/homegrid_diagnostics/diagnostics.c \
+            components/homegrid_application/application.c \
+            tests/host/test_fw02d_application.c \
+            -o test_fw02d_application
+          ./test_fw02d_application
+
+      - name: Compile and run FW-02E diagnostics tests
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -pedantic \
+            -I components/homegrid_domain/include \
+            -I components/homegrid_diagnostics/include \
+            components/homegrid_diagnostics/diagnostics.c \
+            tests/host/test_fw02e_diagnostics.c \
+            -o test_fw02e_diagnostics
+          ./test_fw02e_diagnostics
+
+      - name: Run existing Python scaffold tests
+        run: |
+          python3 -m unittest discover -s tests -v
