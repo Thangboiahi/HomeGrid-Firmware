@@ -1,12 +1,12 @@
 /*
- * FW-02D synchronous application orchestration API.
+ * FW-02D synchronous application orchestration API with FW-02E diagnostics.
  *
- * Commands are accepted only when the caller supplies an explicit policy.
- * The only actuator dependency is the FW-02 mock adapter.
+ * Commands require explicit policy. The actuator dependency remains mock-only.
  */
 #ifndef HOMEGRID_APPLICATION_H
 #define HOMEGRID_APPLICATION_H
 
+#include "homegrid/diagnostics.h"
 #include "homegrid/mock_actuator.h"
 #include "homegrid/switch_state.h"
 
@@ -23,6 +23,7 @@ typedef struct {
 typedef struct {
     hg_switch_state_t switch_state;
     hg_mock_actuator_t mock_actuator;
+    hg_diagnostics_t diagnostics;
 } hg_application_t;
 
 typedef enum {
@@ -42,8 +43,8 @@ hg_application_status_t hg_application_set_mock_result(
     hg_switch_actuator_result_t result);
 
 /*
- * Processes one command synchronously. A policy rejection never reaches
- * the mock. A mock outcome is recorded as software state only.
+ * Processes one command synchronously. Policy rejection never reaches the
+ * mock. Outcomes are recorded in bounded in-memory diagnostics.
  */
 hg_application_status_t hg_application_process_command(
     hg_application_t *application,
