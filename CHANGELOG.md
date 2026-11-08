@@ -1,3 +1,8 @@
+## FW-04C — Hardware-independent driver interfaces — 2026-11-08
+- Added `docs/FW-04C-hardware-independent-driver-interfaces.md` specifying logical switch/relay/fan/feedback boundaries, typed adapter outcomes, independent state dimensions, feedback validity and mock compatibility.
+- Kept all physical electrical characteristics and GPIO details outside application interfaces; no real GPIO/peripheral driver or shared contract was added.
+- Design only; no output activation or physical test. Deny-only output permission unchanged; ESP-IDF v6.1, `esp32` target and 2 MB image configuration preserved.
+
 ## FW-04B — Board support abstraction design — 2026-11-08
 - Added `docs/FW-04B-board-support-abstraction-design.md` defining logical board-support ownership, evidence-backed profile model, initialization/capability reporting, failure behavior, configuration ownership and host-test requirements.
 - Kept physical pin mappings unknown until Hardware verifies them; capability discovery does not grant output permission.
