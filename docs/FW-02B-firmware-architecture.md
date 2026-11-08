@@ -4,7 +4,7 @@
 **Work package:** FW-02B — Firmware Architecture  
 **Authority:** `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001`  
 **Predecessor:** FW-02A accepted by Firmware Department on branch `fw-02a-requirements-traceability`; PR #1 remains an integration-review dependency.  
-**Status:** Architecture baseline — prepared for department verification  
+**Status:** Department-accepted architecture baseline; integration review pending  
 **Target:** Original ESP32 target already verified for the existing FW-01 build; ESP-IDF v6.1; C; FreeRTOS.  
 **Safety class for this package:** Host/mock-only design. No hardware output path is designed or enabled.
 
@@ -340,8 +340,8 @@ No test or build is claimed by this architecture document. FW-02C/D/E/F will add
 - [x] Error propagation, task/concurrency and resource model documented.
 - [x] Host/firmware build and verification boundaries documented.
 - [x] Future integration gates mapped to authoritative owners.
-- [ ] Document committed and reread from GitHub.
-- [ ] Firmware Department acceptance recorded after repository verification.
+- [x] Document committed and reread from GitHub; all architecture sections and required boundaries verified.
+- [x] Firmware Department acceptance recorded after repository verification. PR integration review remains separate.
 
 ## 17. FW-02C entry criteria and recommendation
 
@@ -349,4 +349,4 @@ Proceed to FW-02C with pure C domain types and deterministic transition/command-
 
 ---
 **Prepared by:** HomeGrid Firmware Department  
-**Document control:** FW-02B architecture baseline; implementation and verification are subsequent work packages.
+**Document control:** Department-accepted FW-02B architecture baseline on branch `fw-02b-firmware-architecture`; implementation and verification are subsequent work packages.
