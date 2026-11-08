@@ -1,5 +1,11 @@
 # Change log
 
+## FW-02C state model and command processing — 2026-11-08
+- Added a platform-independent pure-C switch-domain API and implementation with distinct desired/applied/observed/availability/fault/output-permission dimensions.
+- Implemented safe UNKNOWN startup, permanent output DENIED, explicit command policy gating (unresolved/denied commands do not mutate state), typed mock-result state recording and enum/state validation.
+- Added eight native C test cases, host build instructions and a GitHub Actions workflow to compile/run the C suite and existing Python scaffold tests.
+- Added `docs/FW-02C-implementation-report.md`. Implementation is committed; CI execution and evidence review remain pending. No physical GPIO, actuator, network, persistence, provisioning, OTA or shared-contract code was added.
+
 ## FW-02B firmware architecture — 2026-11-08
 - Added `docs/FW-02B-firmware-architecture.md` defining the layered ports-and-adapters architecture, component responsibilities, dependency direction, source layout, state ownership/invariants, command boundary, mock-only actuator contract, identity/configuration/diagnostics ports, error model, task/resource model, test strategy and future integration gates.
 - Kept the package architecture-only: no firmware source, GPIO, actuator, network, provisioning, OTA, persistence or shared-contract implementation was added.
