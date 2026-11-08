@@ -5,7 +5,7 @@
 **Authority:** `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001`  
 **Predecessor:** FW-02D host CI passed; Firmware Department acceptance recorded.  
 **Architecture reference:** `docs/FW-02B-firmware-architecture.md`  
-**Status:** Implementation committed; FW-02E branch CI verification pending  
+**Status:** Host CI verification passed; Firmware Department acceptance recorded  
 **Branch:** `fw-02e-diagnostics-fault-handling`
 
 ## 1. Implementation inventory
@@ -50,7 +50,7 @@ The CI workflow compiles with C11, `-Wall -Wextra -Werror -pedantic` and runs:
 3. FW-02E diagnostics tests.
 4. Existing Python FW-01 scaffold tests.
 
-FW-02E is not accepted until the branch CI run and job logs are reviewed. No ESP-IDF build or physical hardware test is implied.
+FW-02E host verification passed. This confirms host/mock behavior only; no ESP-IDF build or physical hardware test is implied.
 
 ## 5. Exit checklist
 
@@ -59,9 +59,9 @@ FW-02E is not accepted until the branch CI run and job logs are reviewed. No ESP
 - [x] Application startup, policy rejection and mock outcomes instrumented.
 - [x] Host test suite added and CI workflow extended.
 - [x] Safety exclusions and unresolved policies preserved.
-- [ ] FW-02E GitHub Actions run passes.
-- [ ] CI job logs reviewed.
-- [ ] Firmware Department acceptance recorded.
+- [x] GitHub Actions run 26 completed successfully for PR #5 (merge commit `a784a2bbd3bbda91fa5b3b00c978dbe36622d4b7`).
+- [x] Job `host-tests` logs reviewed: FW-02C, FW-02D, FW-02E and six Python scaffold tests all passed.
+- [x] Firmware Department verification gate accepted; proceed to FW-02F.
 
 ---
 **Prepared by:** HomeGrid Firmware Department  
