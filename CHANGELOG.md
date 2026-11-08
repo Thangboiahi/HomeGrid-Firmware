@@ -1,5 +1,11 @@
 # Change log
 
+## FW-02E diagnostics and fault handling — 2026-11-08
+- Added a bounded, fixed-capacity in-memory diagnostics event ring with chronological reads, saturating counters, overwrite accounting and sticky last-fault summary.
+- Instrumented application startup, policy rejection, state errors and mock actuator outcomes with correlation IDs and state revisions.
+- Added host tests for event validation, counters, chronological retention, ring overwrite and fault reporting; extended CI to run the new suite.
+- Diagnostics have no clock, logger, storage, transport, GPIO, network or RTOS dependency; output permission remains permanently denied and observed state remains unknown.
+
 ## FW-02D mock actuator and application orchestration — 2026-11-08
 - Added a deterministic host-only mock actuator that records requested values/counts and returns controlled outcomes; its safe default is unavailable.
 - Added synchronous application orchestration that applies the explicit command-policy gate before calling the mock and records typed outcomes in the domain state.
@@ -25,7 +31,7 @@
 
 ## FW-01F final acceptance and FW-02 proposal — 2026-11-08
 - Audited FW-01A–FW-01E reports and evidence, reconciled the board records to measured ESP32-D0WD-V3 v3.0 / 4 MB flash / CH9102 COM8 (VID_1A86:PID_55D4), and retained the 2 MB image-header warning and unknown board/module markings.
-- Formally closed FW-01 following Firmware Department acceptance of FW-01E. Created `docs/FW-01-final-acceptance-report.md` with evidence index and non-blocking hardware follow-ups.
+- Formally closed FW-01 following Department acceptance of FW-01E. Created `docs/FW-01-final-acceptance-report.md` with evidence index and non-blocking hardware follow-ups.
 - Prepared `docs/FW-02-work-package.md` for HQ decision only; no FW-02 implementation began and no relay/mains work is authorized.
 
 ## FW-01E physical verification — 2026-11-08
