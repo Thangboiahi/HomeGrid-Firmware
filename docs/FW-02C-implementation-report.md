@@ -4,7 +4,7 @@
 **Work package:** FW-02C — State Model and Command Processing  
 **Authority:** `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001`  
 **Architecture reference:** `docs/FW-02B-firmware-architecture.md`  
-**Status:** Implementation committed; automated host verification pending  
+**Status:** Implementation committed; local mirrored test passed; repository CI verification pending  
 **Branch:** `fw-02c-state-command-domain`
 
 ## 1. Implementation inventory
@@ -51,12 +51,14 @@ The C host test source covers:
 
 A GitHub Actions workflow was added to compile with C11, `-Wall -Wextra -Werror -pedantic`, execute the C test binary, and run the existing Python scaffold suite.
 
-**Important:** The workflow has not yet been observed running successfully. No C compiler output, CI pass, ESP-IDF build or physical test is claimed in this report until the run is retrieved and reviewed.
+**Local check:** A temporary local mirror of the domain implementation and eight test cases was compiled with GCC 14.2.0 using C11, `-Wall -Wextra -Werror -pedantic`; all eight assertions passed. This was not a checkout/build of the GitHub branch and is not treated as repository CI evidence.
+
+**CI status:** The GitHub Actions workflow file is committed, but no workflow run is currently visible through the available repository run lookup. Do not claim a CI pass, ESP-IDF build or physical test. The exact branch CI result still needs to be retrieved from GitHub.
 
 ## 5. Remaining verification gates
 
-- [ ] GitHub Actions C host test passes.
-- [ ] Existing Python scaffold tests pass in CI.
+- [ ] GitHub Actions C host test passes and its logs are reviewed.
+- [ ] Existing Python scaffold tests pass in CI and their logs are reviewed.
 - [ ] Review actual compiler/test logs and correct any failures.
 - [ ] Read back all implementation/test/workflow files from GitHub.
 - [ ] Audit diff for forbidden hardware/network/storage APIs and secrets.
