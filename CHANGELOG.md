@@ -1,3 +1,22 @@
+## FW-03D — Relay and fan-driver interface requirements — 2026-11-08
+- Added logical actuator boundary, Hardware evidence checklist for relay/fan drivers, electrical/load/protection requirements, feedback semantics, reset/unpowered/disconnected failure cases, safe-default requirements and dependencies.
+- All relay polarity, voltage/current, topology, isolation, fan type/control method and feedback characteristics remain explicitly unknown pending exact hardware evidence.
+- No GPIO implementation, relay/fan operation, mains connection or physical test. FW-02 output permission remains deny-only.
+
+## FW-03C — GPIO and peripheral allocation proposal — 2026-11-08
+- Added a preliminary ESP32 GPIO suitability register, peripheral planning matrix, pin/resource conflict register, Hardware Department evidence checklist and explicit non-allocation statement.
+- Classified flash pins as reserved, strapping pins and UART0 as avoid/reserved, GPIO34–39 as input-only, and other pins as conditional candidates pending exact carrier schematic/net verification.
+- No GPIO configuration, output writes, peripheral initialization, electrical probing, actuator connection or physical testing performed. FW-02 output permission remains deny-only.
+
+## FW-03A / FW-03B planning updates — 2026-11-08
+- Incorporated user-supplied board photographs: PCB silkscreen `ESP32 DEVKIT V1`, module shield `ESP-WROOM-32`, visible FCC ID `2AC7Z-ESP32WROOM32`, Micro-USB connector and EN/BOOT buttons. Manufacturer, PCB revision, module suffix, PSRAM and power characteristics remain unverified.
+- Added FW-03B hardware/software interface requirements, department ownership, semantic boundaries, error requirements and open contract dependencies. Software repository review found the accessible repository empty; no existing Software contract could be verified or modified.
+- No GPIO, physical actuator, network, persistence, relay/fan, or mains implementation/testing was performed. FW-02 output permission remains deny-only.
+
+## FW-03A board and module identification — 2026-11-08
+- Added an evidence-based board/module identity report separating verified ESP32-D0WD-V3 rev 3.0, 4 MB detected flash, ESP-IDF v6.1 / esp32 target and CH9102 USB bridge facts from unresolved carrier-board revision, module suffix, PSRAM and power details.
+- Recorded the Hardware Department inspection request, evidence checklist, ownership and FW-03A exit gate. No GPIO, peripheral, actuator or physical testing was performed.
+
 # Change log
 
 ## FW-02F verification and final handover — 2026-11-08
