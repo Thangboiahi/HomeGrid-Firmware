@@ -5,7 +5,7 @@
 **Authority:** `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001`  
 **Predecessor:** FW-02C verification gate passed based on user confirmation of successful GitHub Actions.  
 **Architecture reference:** `docs/FW-02B-firmware-architecture.md`  
-**Status:** Implementation committed; branch CI verification pending  
+**Status:** Host CI verification passed; Firmware Department acceptance recorded  
 **Branch:** `fw-02d-mock-actuator-application`
 
 ## 1. Implementation inventory
@@ -62,9 +62,9 @@ The CI workflow compiles with C11 and `-Wall -Wextra -Werror -pedantic`, runs bo
 - [x] New files and component boundaries committed to the FW-02D branch.
 - [x] Host tests and workflow commands added.
 - [x] Source-level review confirms no GPIO/peripheral/network/storage implementation in the new mock/application sources.
-- [ ] Actual GitHub Actions run for this branch passes.
-- [ ] Actual CI job steps/logs reviewed.
-- [ ] Firmware Department acceptance after CI evidence review.
+- [x] GitHub Actions run 12 for commit `0baa013227729e2739ce798891163fbea957325d` completed successfully.
+- [x] Job `host-tests` completed successfully; FW-02C C tests, FW-02D application/mock C tests, and six Python scaffold tests all passed.
+- [x] Firmware Department verification gate accepted; proceed to FW-02E.
 
 No local compiler run or branch CI pass is claimed in this report. The FW-02D gate remains open until GitHub Actions completes successfully.
 
