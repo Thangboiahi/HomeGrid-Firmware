@@ -5,7 +5,7 @@
 **Authority:** HomeGrid HQ Executive Directive `HG-HQ-ED-FW02-001`  
 **Decision:** `HG-HQ-DEC-20261108-FW02-001`  
 **Directive date:** 2026-11-08  
-**Status:** Department baseline prepared; pending verification and acceptance  
+**Status:** Department content accepted; GitHub integration review/merge pending  
 **Repository baseline:** `main` at the FW-01F-closed revision
 
 ## 1. Purpose and authority
@@ -130,8 +130,8 @@ These dependencies do not prevent FW-02A traceability or a board-independent, mo
 - [x] Shared interface ownership and missing contracts documented.
 - [x] Non-assumptions and safety constraints made explicit.
 - [x] Open dependencies assigned to authoritative owners.
-- [ ] Repository change committed and reread from GitHub.
-- [ ] Firmware Department acceptance recorded after repository verification.
+- [x] Repository change committed and reread from GitHub; all 24 requirement IDs and required sections verified on the work branch.
+- [x] Firmware Department content acceptance recorded after repository verification. GitHub integration review/merge remains a separate repository governance step.
 
 ## 9. FW-02B entry recommendation
 
@@ -139,4 +139,4 @@ Proceed with a board-independent architecture and explicit state model using pur
 
 ---
 **Prepared by:** HomeGrid Firmware Department  
-**Document control:** FW-02A working baseline; repository commit and acceptance status must be recorded separately.
+**Document control:** Department-accepted FW-02A baseline on branch `fw-02a-requirements-traceability`; PR #1 remains open for integration review.
