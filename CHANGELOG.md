@@ -3,7 +3,7 @@
 ## FW-02B firmware architecture — 2026-11-08
 - Added `docs/FW-02B-firmware-architecture.md` defining the layered ports-and-adapters architecture, component responsibilities, dependency direction, source layout, state ownership/invariants, command boundary, mock-only actuator contract, identity/configuration/diagnostics ports, error model, task/resource model, test strategy and future integration gates.
 - Kept the package architecture-only: no firmware source, GPIO, actuator, network, provisioning, OTA, persistence or shared-contract implementation was added.
-- FW-02B architecture document is on branch `fw-02b-firmware-architecture`; repository reread and department acceptance remain pending.
+- FW-02B architecture document was reread from GitHub and accepted by the Firmware Department. PR integration review remains pending; no source implementation was introduced.
 
 ## FW-02A requirements traceability and HQ authorization — 2026-11-08
 - Recorded HQ authorization `HG-HQ-ED-FW02-001` / `HG-HQ-DEC-20261108-FW02-001` and converted the former FW-02 proposal into the approved six-package execution plan with mandatory host/mock-only restrictions.
