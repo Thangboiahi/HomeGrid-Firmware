@@ -1,3 +1,8 @@
+## FW-03D — Relay and fan-driver interface requirements — 2026-11-08
+- Added logical actuator boundary, Hardware evidence checklist for relay/fan drivers, electrical/load/protection requirements, feedback semantics, reset/unpowered/disconnected failure cases, safe-default requirements and dependencies.
+- All relay polarity, voltage/current, topology, isolation, fan type/control method and feedback characteristics remain explicitly unknown pending exact hardware evidence.
+- No GPIO implementation, relay/fan operation, mains connection or physical test. FW-02 output permission remains deny-only.
+
 ## FW-03C — GPIO and peripheral allocation proposal — 2026-11-08
 - Added a preliminary ESP32 GPIO suitability register, peripheral planning matrix, pin/resource conflict register, Hardware Department evidence checklist and explicit non-allocation statement.
 - Classified flash pins as reserved, strapping pins and UART0 as avoid/reserved, GPIO34–39 as input-only, and other pins as conditional candidates pending exact carrier schematic/net verification.
